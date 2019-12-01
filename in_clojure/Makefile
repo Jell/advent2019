@@ -15,4 +15,4 @@ README.md:
 $(DIFFS): README.md
 	../diff.sh $@ $@_part_1.clj $@_part_2.clj
 
-all: $(MAIN_FILES) $(DIFFS) README.md
+all: $(MAIN_FILES) $(DIFFS)

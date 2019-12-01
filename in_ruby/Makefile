@@ -4,12 +4,15 @@ MAIN_FILES := $(wildcard ./day*.rb)
 
 DIFFS := $(shell ls | grep -e "day_.._part_." | grep -o "day_.." | uniq)
 
-.PHONY: $(MAIN_FILES) $(DIFFS)
+.PHONY: $(MAIN_FILES) $(DIFFS) README.md
 
 $(MAIN_FILES):
 	ruby $@
 
-$(DIFFS):
-	git diff --word-diff=color --color-moved-ws=ignore-all-space --diff-algorithm=minimal --no-index $@_part_* | ansifilter -S > $@_diff.svg
+README.md:
+	echo "# In Ruby\n" > README.md
+
+$(DIFFS): README.md
+	../diff.sh $@ $@_part_1.rb $@_part_2.rb
 
 all: $(MAIN_FILES) $(DIFFS)
