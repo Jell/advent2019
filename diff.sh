@@ -5,7 +5,7 @@ set -eux
 DEST="$1"
 PART1="$2"
 PART2="$3"
-WIDTH=400
+WIDTH=600
 
 SVG="${DEST}_diff.svg"
 
