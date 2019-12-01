@@ -10,6 +10,6 @@ $(MAIN_FILES):
 	ruby $@
 
 $(DIFFS):
-	git diff --word-diff=color --color-moved-ws=ignore-all-space --diff-algorithm=minimal --no-index $@_part_* | ansifilter -H > $@_diff.html
+	git diff --word-diff=color --color-moved-ws=ignore-all-space --diff-algorithm=minimal --no-index $@_part_* | ansifilter -S > $@_diff.svg
 
 all: $(MAIN_FILES) $(DIFFS)
