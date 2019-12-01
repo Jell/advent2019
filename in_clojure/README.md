@@ -1,6 +1,5 @@
 # In Clojure
 
 ## day01
-<img src="./day01_diff.svg">
+![day01](./day01_diff.svg)
 
-<br>

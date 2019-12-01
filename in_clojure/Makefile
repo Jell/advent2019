@@ -15,7 +15,6 @@ README.md:
 $(DIFFS): README.md
 	git diff --word-diff=color --color-moved-ws=ignore-all-space --diff-algorithm=minimal --no-index $@_part* | ansifilter -S > $@_diff.svg
 	echo "## $@" >> README.md
-	echo "<img src=\"./$@_diff.svg\">\n" >> README.md
+	echo "![$@](./$@_diff.svg)\n" >> README.md
 
 all: $(MAIN_FILES) $(DIFFS) README.md
-	echo "<br>" >> README.md
