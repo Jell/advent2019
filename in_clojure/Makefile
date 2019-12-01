@@ -13,8 +13,6 @@ README.md:
 	echo "# In Clojure\n" > README.md
 
 $(DIFFS): README.md
-	git diff --word-diff=color --color-moved-ws=ignore-all-space --diff-algorithm=minimal --no-index $@_part* | ansifilter -S > $@_diff.svg
-	echo "## $@" >> README.md
-	echo "![$@](./$@_diff.svg)\n" >> README.md
+	../diff.sh $@ $@_part_1.clj $@_part_2.clj
 
 all: $(MAIN_FILES) $(DIFFS) README.md
