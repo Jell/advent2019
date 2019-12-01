@@ -20,4 +20,4 @@ sed "s/__HEIGHT__/${HEIGHT}/g" "${SVG}" > "${SVG}.tmp"
 mv "${SVG}.tmp" "${SVG}"
 
 echo "## ${DEST}" >> README.md
-echo "![${DEST}](./${SVG})\\n" >> README.md
+echo "![${DEST}](./${SVG})" >> README.md
