@@ -2,7 +2,7 @@
 
 |          |clojure   |crystal   |go        |haskell   |ruby      |typescript|
 |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |:---:     |
-|Day 01    |          |          |⭐⭐        |          |          |          |
+|Day 01    |          |          |⭐⭐        |          |⭐⭐        |          |
 
 
 ## Languages
