@@ -4,6 +4,30 @@ langs = Dir.glob('in_*').map { |d| d.gsub("in_", "") }.sort
 
 solutions = {
   "Day 01" => { part1: "3515171", part2: "5269882" },
+  "Day 02" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 03" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 04" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 05" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 06" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 07" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 08" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 09" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 10" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 11" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 12" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 13" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 14" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 15" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 16" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 17" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 18" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 19" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 20" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 21" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 22" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 23" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 24" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 25" => { part1: "XXXXXXX", part2: "XXXXXXX" },
 }
 
 results = {}
