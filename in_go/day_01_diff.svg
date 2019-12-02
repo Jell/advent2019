@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.2//EN" "http://www.w3.org/Graphics/SVG/1.2/DTD/svg12.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="full" xml:space="preserve" width="600" height="440">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="full" xml:space="preserve" width="600" height="560">
 <desc>Source file</desc>
 <defs><style type="text/css">
 <![CDATA[
@@ -12,45 +12,57 @@ g { font-size: 10pt; font-family: Courier New; white-space: pre; }
 <text x="10" y="20"></text>
 <text x="10" y="20"><tspan style="font-weight:bold;fill:#7f7f7f;">diff&#160;--git&#160;a/day_01_part_1/main.go&#160;b/day_01_part_2/main.go</tspan>
 </text>
-<text x="10" y="40"><tspan style="font-weight:bold;fill:#7f7f7f;">index&#160;8054ff8..1c53d56&#160;100644</tspan>
+<text x="10" y="40"><tspan style="font-weight:bold;fill:#7f7f7f;">index&#160;8054ff8..5f38774&#160;100644</tspan>
 </text>
 <text x="10" y="60"><tspan style="font-weight:bold;fill:#7f7f7f;">---&#160;a/day_01_part_1/main.go</tspan>
 </text>
 <text x="10" y="80"><tspan style="font-weight:bold;fill:#7f7f7f;">+++&#160;b/day_01_part_2/main.go</tspan>
 </text>
-<text x="10" y="100"><tspan style="fill:#00cdcd;">@@&#160;-11,8&#160;+11,16&#160;@@</tspan>&#160;func&#160;main()&#160;{
+<text x="10" y="100"><tspan style="fill:#00cdcd;">@@&#160;-5,14&#160;+5,22&#160;@@</tspan>&#160;import&#160;(
 </text>
-<text x="10" y="120">
+<text x="10" y="120">	&quot;github.com/Jell/advent2019/utils&quot;
 </text>
-<text x="10" y="140">	for&#160;_,&#160;line&#160;:=&#160;range&#160;lines&#160;{
+<text x="10" y="140">)
 </text>
-<text x="10" y="160">		var&#160;mass&#160;=&#160;utils.StrToInt(line)
+<text x="10" y="160">
 </text>
-<text x="10" y="180">		<tspan style="fill:#cd0000;">fuel&#160;+=&#160;(mass</tspan><tspan style="fill:#00cd00;">var&#160;extraFuelMass&#160;=&#160;mass</tspan>
+<text x="10" y="180"><tspan style="fill:#00cd00;">func&#160;massToFuel(mass&#160;int)&#160;int&#160;{</tspan>
 </text>
-<text x="10" y="200"><tspan style="fill:#00cd00;">		for&#160;{</tspan>
+<text x="10" y="200"><tspan style="fill:#00cd00;">	var&#160;fuel&#160;=&#160;(mass&#160;/&#160;3)&#160;-&#160;2</tspan>
 </text>
-<text x="10" y="220"><tspan style="fill:#00cd00;">			extraFuelMass&#160;=&#160;(extraFuelMass</tspan>&#160;/&#160;3)&#160;-&#160;2
+<text x="10" y="220"><tspan style="fill:#00cd00;">	if&#160;fuel&#160;&lt;=&#160;0&#160;{</tspan>
 </text>
-<text x="10" y="240">			<tspan style="fill:#00cd00;">if&#160;extraFuelMass&#160;&gt;&#160;0&#160;{</tspan>
+<text x="10" y="240"><tspan style="fill:#00cd00;">		return&#160;0</tspan>
 </text>
-<text x="10" y="260"><tspan style="fill:#00cd00;">				fuel&#160;+=&#160;extraFuelMass</tspan>
+<text x="10" y="260"><tspan style="fill:#00cd00;">	}</tspan>
 </text>
-<text x="10" y="280"><tspan style="fill:#00cd00;">			}&#160;else&#160;{</tspan>
+<text x="10" y="280"><tspan style="fill:#00cd00;">	return&#160;fuel&#160;+&#160;massToFuel(fuel)</tspan>
 </text>
-<text x="10" y="300"><tspan style="fill:#00cd00;">				break</tspan>
+<text x="10" y="300"><tspan style="fill:#00cd00;">}</tspan>
 </text>
-<text x="10" y="320"><tspan style="fill:#00cd00;">			}</tspan>
+<text x="10" y="320">
 </text>
-<text x="10" y="340"><tspan style="fill:#00cd00;">		}</tspan>
+<text x="10" y="340">func&#160;main()&#160;{
 </text>
-<text x="10" y="360">	}
+<text x="10" y="360">	var&#160;lines&#160;=&#160;utils.ReadLines(&quot;../../inputs/day01.txt&quot;)
 </text>
-<text x="10" y="380">
+<text x="10" y="380">	var&#160;fuel&#160;=&#160;0
 </text>
-<text x="10" y="400">	fmt.Println(&quot;Day&#160;01&#160;-&#160;Part&#160;<tspan style="fill:#cd0000;">1:&quot;,</tspan><tspan style="fill:#00cd00;">2:&quot;,</tspan>&#160;fuel)
+<text x="10" y="400">
 </text>
-<text x="10" y="420">}
+<text x="10" y="420">	for&#160;_,&#160;line&#160;:=&#160;range&#160;lines&#160;{
+</text>
+<text x="10" y="440">		var&#160;mass&#160;=&#160;utils.StrToInt(line)
+</text>
+<text x="10" y="460">		fuel&#160;+=&#160;<tspan style="fill:#cd0000;">(mass&#160;/&#160;3)&#160;-&#160;2</tspan><tspan style="fill:#00cd00;">massToFuel(mass)</tspan>
+</text>
+<text x="10" y="480">	}
+</text>
+<text x="10" y="500">
+</text>
+<text x="10" y="520">	fmt.Println(&quot;Day&#160;01&#160;-&#160;Part&#160;<tspan style="fill:#cd0000;">1:&quot;,</tspan><tspan style="fill:#00cd00;">2:&quot;,</tspan>&#160;fuel)
+</text>
+<text x="10" y="540">}
 </text>
 </g>
 </svg>
