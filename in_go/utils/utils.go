@@ -38,3 +38,12 @@ func StrToInt(input string) int {
 func IntToStr(input int) string {
 	return strconv.FormatInt(int64(input), 10)
 }
+
+// StrsToInts ...
+func StrsToInts(input []string) []int {
+	var out []int
+	for _, str := range input {
+		out = append(out, StrToInt(str))
+	}
+	return out
+}

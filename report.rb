@@ -4,7 +4,7 @@ langs = Dir.glob('in_*').map { |d| d.gsub("in_", "") }.sort
 
 solutions = {
   "Day 01" => { part1: "3515171", part2: "5269882" },
-  "Day 02" => { part1: "XXXXXXX", part2: "XXXXXXX" },
+  "Day 02" => { part1: "4484226", part2: "5696" },
   "Day 03" => { part1: "XXXXXXX", part2: "XXXXXXX" },
   "Day 04" => { part1: "XXXXXXX", part2: "XXXXXXX" },
   "Day 05" => { part1: "XXXXXXX", part2: "XXXXXXX" },

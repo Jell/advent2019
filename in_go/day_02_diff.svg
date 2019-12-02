@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.2//EN" "http://www.w3.org/Graphics/SVG/1.2/DTD/svg12.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="full" xml:space="preserve" width="600" height="1160">
+<desc>Source file</desc>
+<defs><style type="text/css">
+<![CDATA[
+rect { fill:#ffffff; } 
+g { font-size: 10pt; font-family: Courier New; white-space: pre; }
+]]>
+</style></defs><g>
+<rect x="0" y="0" width="100%" height="100%"/>
+<text x="10" y="20"></text>
+<text x="10" y="20"><tspan style="font-weight:bold;fill:#7f7f7f;">diff&#160;--git&#160;a/day_02_part_1/main.go&#160;b/day_02_part_2/main.go</tspan>
+</text>
+<text x="10" y="40"><tspan style="font-weight:bold;fill:#7f7f7f;">index&#160;2f5259f..d56274e&#160;100644</tspan>
+</text>
+<text x="10" y="60"><tspan style="font-weight:bold;fill:#7f7f7f;">---&#160;a/day_02_part_1/main.go</tspan>
+</text>
+<text x="10" y="80"><tspan style="font-weight:bold;fill:#7f7f7f;">+++&#160;b/day_02_part_2/main.go</tspan>
+</text>
+<text x="10" y="100"><tspan style="fill:#00cdcd;">@@&#160;-6,14&#160;+6,7&#160;@@</tspan>&#160;import&#160;(
+</text>
+<text x="10" y="120">	&quot;strings&quot;
+</text>
+<text x="10" y="140">)
+</text>
+<text x="10" y="160">
+</text>
+<text x="10" y="180">func&#160;<tspan style="fill:#cd0000;">main()</tspan><tspan style="fill:#00cd00;">try(tape&#160;[]int,&#160;target&#160;int)&#160;bool</tspan>&#160;{<tspan style="fill:#cd0000;">var&#160;prog&#160;=&#160;utils.ReadFile(&quot;../../inputs/day02.txt&quot;)</tspan>
+</text>
+<text x="10" y="200"><tspan style="fill:#cd0000;">	prog&#160;=&#160;strings.TrimSuffix(prog,&#160;&quot;\n&quot;)</tspan>
+</text>
+<text x="10" y="220"><tspan style="fill:#cd0000;">	var&#160;tape&#160;=&#160;utils.StrsToInts(strings.Split(prog,&#160;&quot;,&quot;))</tspan>
+</text>
+<text x="10" y="240">
+</text>
+<text x="10" y="260"><tspan style="fill:#cd0000;">	tape[1]&#160;=&#160;12</tspan>
+</text>
+<text x="10" y="280"><tspan style="fill:#cd0000;">	tape[2]&#160;=&#160;2</tspan>
+</text>
+<text x="10" y="300">	var&#160;position&#160;=&#160;0
+</text>
+<text x="10" y="320">
+</text>
+<text x="10" y="340">	var&#160;aStar&#160;int
+</text>
+<text x="10" y="360"><tspan style="fill:#00cdcd;">@@&#160;-21,6&#160;+14,9&#160;@@</tspan>&#160;func&#160;main()&#160;{
+</text>
+<text x="10" y="380">	var&#160;cStar&#160;int
+</text>
+<text x="10" y="400">Loop:
+</text>
+<text x="10" y="420">	for&#160;{
+</text>
+<text x="10" y="440">		<tspan style="fill:#00cd00;">if&#160;tape[0]&#160;&gt;=&#160;target&#160;{</tspan>
+</text>
+<text x="10" y="460"><tspan style="fill:#00cd00;">			break&#160;Loop</tspan>
+</text>
+<text x="10" y="480"><tspan style="fill:#00cd00;">		}</tspan>
+</text>
+<text x="10" y="500">		switch&#160;tape[position]&#160;{
+</text>
+<text x="10" y="520">		case&#160;1:
+</text>
+<text x="10" y="540">			aStar&#160;=&#160;tape[position+1]
+</text>
+<text x="10" y="560"><tspan style="fill:#00cdcd;">@@&#160;-40,5&#160;+36,29&#160;@@</tspan>&#160;Loop:
+</text>
+<text x="10" y="580">		position&#160;+=&#160;4
+</text>
+<text x="10" y="600">	}
+</text>
+<text x="10" y="620">
+</text>
+<text x="10" y="640">	<tspan style="fill:#00cd00;">return&#160;tape[0]&#160;==&#160;target</tspan>
+</text>
+<text x="10" y="660"><tspan style="fill:#00cd00;">}</tspan>
+</text>
+<text x="10" y="680">
+</text>
+<text x="10" y="700"><tspan style="fill:#00cd00;">func&#160;main()&#160;{</tspan>
+</text>
+<text x="10" y="720"><tspan style="fill:#00cd00;">	var&#160;prog&#160;=&#160;utils.ReadFile(&quot;../../inputs/day02.txt&quot;)</tspan>
+</text>
+<text x="10" y="740"><tspan style="fill:#00cd00;">	prog&#160;=&#160;strings.TrimSuffix(prog,&#160;&quot;\n&quot;)</tspan>
+</text>
+<text x="10" y="760"><tspan style="fill:#00cd00;">	var&#160;tape&#160;=&#160;utils.StrsToInts(strings.Split(prog,&#160;&quot;,&quot;))</tspan>
+</text>
+<text x="10" y="780"><tspan style="fill:#00cd00;">	var&#160;target&#160;=&#160;19690720</tspan>
+</text>
+<text x="10" y="800"><tspan style="fill:#00cd00;">	var&#160;noun&#160;=&#160;0</tspan>
+</text>
+<text x="10" y="820"><tspan style="fill:#00cd00;">	var&#160;verb&#160;=&#160;0</tspan>
+</text>
+<text x="10" y="840">
+</text>
+<text x="10" y="860"><tspan style="fill:#00cd00;">Loop:</tspan>
+</text>
+<text x="10" y="880"><tspan style="fill:#00cd00;">	for&#160;noun&#160;=&#160;0;&#160;noun&#160;&lt;=&#160;99;&#160;noun++&#160;{</tspan>
+</text>
+<text x="10" y="900"><tspan style="fill:#00cd00;">		for&#160;verb&#160;=&#160;0;&#160;verb&#160;&lt;=&#160;99;&#160;verb++&#160;{</tspan>
+</text>
+<text x="10" y="920"><tspan style="fill:#00cd00;">			var&#160;tapeTmp&#160;=&#160;make([]int,&#160;len(tape))</tspan>
+</text>
+<text x="10" y="940"><tspan style="fill:#00cd00;">			copy(tapeTmp,&#160;tape)</tspan>
+</text>
+<text x="10" y="960"><tspan style="fill:#00cd00;">			tapeTmp[1]&#160;=&#160;noun</tspan>
+</text>
+<text x="10" y="980"><tspan style="fill:#00cd00;">			tapeTmp[2]&#160;=&#160;verb</tspan>
+</text>
+<text x="10" y="1000"><tspan style="fill:#00cd00;">			if&#160;try(tapeTmp,&#160;target)&#160;{</tspan>
+</text>
+<text x="10" y="1020"><tspan style="fill:#00cd00;">				break&#160;Loop</tspan>
+</text>
+<text x="10" y="1040"><tspan style="fill:#00cd00;">			}</tspan>
+</text>
+<text x="10" y="1060"><tspan style="fill:#00cd00;">		}</tspan>
+</text>
+<text x="10" y="1080"><tspan style="fill:#00cd00;">	}</tspan>
+</text>
+<text x="10" y="1100">
+</text>
+<text x="10" y="1120">	fmt.Println(&quot;Day&#160;02&#160;-&#160;Part&#160;<tspan style="fill:#cd0000;">1:&quot;,&#160;tape[0])</tspan><tspan style="fill:#00cd00;">2:&quot;,&#160;noun*100+verb)</tspan>
+</text>
+<text x="10" y="1140">}
+</text>
+</g>
+</svg>
+<!-- SVG generated by ansifilter 2.15, http://www.andre-simon.de/ -->
