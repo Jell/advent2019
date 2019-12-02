@@ -10,13 +10,13 @@ g { font-size: 10pt; font-family: Courier New; white-space: pre; }
 </style></defs><g>
 <rect x="0" y="0" width="100%" height="100%"/>
 <text x="10" y="20"></text>
-<text x="10" y="20"><tspan style="font-weight:bold;fill:#7f7f7f;">diff&#160;--git&#160;a/day01_part_1.clj&#160;b/day01_part_2.clj</tspan>
+<text x="10" y="20"><tspan style="font-weight:bold;fill:#7f7f7f;">diff&#160;--git&#160;a/day_01_part_1.clj&#160;b/day_01_part_2.clj</tspan>
 </text>
 <text x="10" y="40"><tspan style="font-weight:bold;fill:#7f7f7f;">index&#160;768c30c..06293ff&#160;100644</tspan>
 </text>
-<text x="10" y="60"><tspan style="font-weight:bold;fill:#7f7f7f;">---&#160;a/day01_part_1.clj</tspan>
+<text x="10" y="60"><tspan style="font-weight:bold;fill:#7f7f7f;">---&#160;a/day_01_part_1.clj</tspan>
 </text>
-<text x="10" y="80"><tspan style="font-weight:bold;fill:#7f7f7f;">+++&#160;b/day01_part_2.clj</tspan>
+<text x="10" y="80"><tspan style="font-weight:bold;fill:#7f7f7f;">+++&#160;b/day_01_part_2.clj</tspan>
 </text>
 <text x="10" y="100"><tspan style="fill:#00cdcd;">@@&#160;-1,10&#160;+1,16&#160;@@</tspan>
 </text>

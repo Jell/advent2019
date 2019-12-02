@@ -1,4 +1,4 @@
 # In Clojure
 
-## day01
-![day01](./day01_diff.svg)
+## day_01
+![day_01](./day_01_diff.svg)

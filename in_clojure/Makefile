@@ -2,7 +2,7 @@
 
 MAIN_FILES := $(wildcard ./*.clj)
 
-DIFFS := $(shell ls | grep -e "day.._part." | grep -o "day.." | sort | uniq)
+DIFFS := $(shell ls | grep -e "day_.._part." | grep -o "day_.." | sort | uniq)
 
 .PHONY: $(MAIN_FILES) $(DIFFS) README.md
 
