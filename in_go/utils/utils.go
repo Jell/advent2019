@@ -47,3 +47,18 @@ func StrsToInts(input []string) []int {
 	}
 	return out
 }
+
+// AbsInt ...
+func AbsInt(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
+// DoTimes ...
+func DoTimes(n int, fn func()) {
+	for i := 0; i < n; i++ {
+		fn()
+	}
+}

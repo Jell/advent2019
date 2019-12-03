@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.2//EN" "http://www.w3.org/Graphics/SVG/1.2/DTD/svg12.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="full" xml:space="preserve" width="600" height="1800">
+<desc>Source file</desc>
+<defs><style type="text/css">
+<![CDATA[
+rect { fill:#ffffff; } 
+g { font-size: 10pt; font-family: Courier New; white-space: pre; }
+]]>
+</style></defs><g>
+<rect x="0" y="0" width="100%" height="100%"/>
+<text x="10" y="20"></text>
+<text x="10" y="20"><tspan style="font-weight:bold;fill:#7f7f7f;">diff&#160;--git&#160;a/day_03_part_1/main.go&#160;b/day_03_part_2/main.go</tspan>
+</text>
+<text x="10" y="40"><tspan style="font-weight:bold;fill:#7f7f7f;">index&#160;b8a223d..256dbe6&#160;100644</tspan>
+</text>
+<text x="10" y="60"><tspan style="font-weight:bold;fill:#7f7f7f;">---&#160;a/day_03_part_1/main.go</tspan>
+</text>
+<text x="10" y="80"><tspan style="font-weight:bold;fill:#7f7f7f;">+++&#160;b/day_03_part_2/main.go</tspan>
+</text>
+<text x="10" y="100"><tspan style="fill:#00cdcd;">@@&#160;-17,6&#160;+17,11&#160;@@</tspan>&#160;type&#160;position&#160;struct&#160;{
+</text>
+<text x="10" y="120">	y&#160;int
+</text>
+<text x="10" y="140">}
+</text>
+<text x="10" y="160">
+</text>
+<text x="10" y="180"><tspan style="fill:#00cd00;">type&#160;stepCounter&#160;struct&#160;{</tspan>
+</text>
+<text x="10" y="200"><tspan style="fill:#00cd00;">	wire1&#160;int</tspan>
+</text>
+<text x="10" y="220"><tspan style="fill:#00cd00;">	wire2&#160;int</tspan>
+</text>
+<text x="10" y="240"><tspan style="fill:#00cd00;">}</tspan>
+</text>
+<text x="10" y="260">
+</text>
+<text x="10" y="280">func&#160;parseMoves(in&#160;string)&#160;[]move&#160;{
+</text>
+<text x="10" y="300">	var&#160;out&#160;[]move
+</text>
+<text x="10" y="320">	for&#160;_,&#160;s&#160;:=&#160;range&#160;strings.Split(in,&#160;&quot;,&quot;)&#160;{
+</text>
+<text x="10" y="340"><tspan style="fill:#00cdcd;">@@&#160;-38,10&#160;+43,12&#160;@@</tspan>&#160;func&#160;main()&#160;{
+</text>
+<text x="10" y="360">	var&#160;wire1&#160;=&#160;parseMoves(input[0])
+</text>
+<text x="10" y="380">	var&#160;wire2&#160;=&#160;parseMoves(input[1])
+</text>
+<text x="10" y="400">
+</text>
+<text x="10" y="420">	var&#160;<tspan style="fill:#cd0000;">crossDistances</tspan><tspan style="fill:#00cd00;">crossPositions</tspan>&#160;=&#160;<tspan style="fill:#cd0000;">[]int{}</tspan><tspan style="fill:#00cd00;">map[position]stepCounter{}</tspan>
+</text>
+<text x="10" y="440">	var&#160;<tspan style="fill:#cd0000;">visited</tspan><tspan style="fill:#00cd00;">visited1&#160;=&#160;map[position]bool{}</tspan>
+</text>
+<text x="10" y="460"><tspan style="fill:#00cd00;">	var&#160;visited2</tspan>&#160;=&#160;map[position]bool{}
+</text>
+<text x="10" y="480">
+</text>
+<text x="10" y="500">	var&#160;pos&#160;position
+</text>
+<text x="10" y="520">	<tspan style="fill:#00cd00;">var&#160;steps&#160;int</tspan>
+</text>
+<text x="10" y="540">
+</text>
+<text x="10" y="560">	var&#160;moveMaker&#160;=&#160;func(dir&#160;string)&#160;func()&#160;{
+</text>
+<text x="10" y="580">		switch&#160;dir&#160;{
+</text>
+<text x="10" y="600"><tspan style="fill:#00cdcd;">@@&#160;-66,29&#160;+73,58&#160;@@</tspan>&#160;func&#160;main()&#160;{
+</text>
+<text x="10" y="620">	}
+</text>
+<text x="10" y="640">
+</text>
+<text x="10" y="660">	pos&#160;=&#160;position{x:&#160;0,&#160;y:&#160;0}
+</text>
+<text x="10" y="680"><tspan style="fill:#cd0000;">	visited[pos]&#160;=&#160;true</tspan>
+</text>
+<text x="10" y="700">	for&#160;_,&#160;m&#160;:=&#160;range&#160;wire1&#160;{
+</text>
+<text x="10" y="720">		move&#160;:=&#160;moveMaker(m.direction)
+</text>
+<text x="10" y="740">		utils.DoTimes(m.amplitude,&#160;func()&#160;{
+</text>
+<text x="10" y="760">			move()
+</text>
+<text x="10" y="780">			<tspan style="fill:#cd0000;">visited[pos]</tspan><tspan style="fill:#00cd00;">visited1[pos]</tspan>&#160;=&#160;true
+</text>
+<text x="10" y="800">		})
+</text>
+<text x="10" y="820">	}
+</text>
+<text x="10" y="840">
+</text>
+<text x="10" y="860">	pos&#160;=&#160;position{x:&#160;0,&#160;y:&#160;0}
+</text>
+<text x="10" y="880">	<tspan style="fill:#00cd00;">steps&#160;=&#160;0</tspan>
+</text>
+<text x="10" y="900">	for&#160;_,&#160;m&#160;:=&#160;range&#160;wire2&#160;{
+</text>
+<text x="10" y="920">		move&#160;:=&#160;moveMaker(m.direction)
+</text>
+<text x="10" y="940">		utils.DoTimes(m.amplitude,&#160;func()&#160;{
+</text>
+<text x="10" y="960">			move()
+</text>
+<text x="10" y="980">			<tspan style="fill:#00cd00;">visited2[pos]&#160;=&#160;true</tspan>
+</text>
+<text x="10" y="1000"><tspan style="fill:#00cd00;">			steps++</tspan>
+</text>
+<text x="10" y="1020"><tspan style="fill:#00cd00;">			if&#160;visited1[pos]&#160;{</tspan>
+</text>
+<text x="10" y="1040">				if&#160;<tspan style="fill:#cd0000;">visited[pos]</tspan><tspan style="fill:#00cd00;">_,&#160;ok&#160;:=&#160;crossPositions[pos];&#160;!ok</tspan>&#160;{
+</text>
+<text x="10" y="1060">					<tspan style="fill:#cd0000;">crossDistances</tspan><tspan style="fill:#00cd00;">crossPositions[pos]</tspan>&#160;=&#160;<tspan style="fill:#cd0000;">append(crossDistances,&#160;manhattan(pos))</tspan><tspan style="fill:#00cd00;">stepCounter{wire2:&#160;steps}</tspan>
+</text>
+<text x="10" y="1080"><tspan style="fill:#00cd00;">				}</tspan>
+</text>
+<text x="10" y="1100">
+</text>
+<text x="10" y="1120">			}
+</text>
+<text x="10" y="1140">		})
+</text>
+<text x="10" y="1160">	}
+</text>
+<text x="10" y="1180">
+</text>
+<text x="10" y="1200">	<tspan style="fill:#00cd00;">pos&#160;=&#160;position{x:&#160;0,&#160;y:&#160;0}</tspan>
+</text>
+<text x="10" y="1220"><tspan style="fill:#00cd00;">	steps&#160;=&#160;0</tspan>
+</text>
+<text x="10" y="1240"><tspan style="fill:#00cd00;">	for&#160;_,&#160;m&#160;:=&#160;range&#160;wire1&#160;{</tspan>
+</text>
+<text x="10" y="1260"><tspan style="fill:#00cd00;">		move&#160;:=&#160;moveMaker(m.direction)</tspan>
+</text>
+<text x="10" y="1280"><tspan style="fill:#00cd00;">		utils.DoTimes(m.amplitude,&#160;func()&#160;{</tspan>
+</text>
+<text x="10" y="1300"><tspan style="fill:#00cd00;">			move()</tspan>
+</text>
+<text x="10" y="1320"><tspan style="fill:#00cd00;">			steps++</tspan>
+</text>
+<text x="10" y="1340"><tspan style="fill:#00cd00;">			if&#160;visited2[pos]&#160;{</tspan>
+</text>
+<text x="10" y="1360"><tspan style="fill:#00cd00;">				if&#160;counter&#160;:=&#160;crossPositions[pos];&#160;counter.wire1&#160;==&#160;0&#160;{</tspan>
+</text>
+<text x="10" y="1380"><tspan style="fill:#00cd00;">					crossPositions[pos]&#160;=&#160;stepCounter{</tspan>
+</text>
+<text x="10" y="1400"><tspan style="fill:#00cd00;">						wire1:&#160;steps,</tspan>
+</text>
+<text x="10" y="1420"><tspan style="fill:#00cd00;">						wire2:&#160;counter.wire2,</tspan>
+</text>
+<text x="10" y="1440"><tspan style="fill:#00cd00;">					}</tspan>
+</text>
+<text x="10" y="1460"><tspan style="fill:#00cd00;">				}</tspan>
+</text>
+<text x="10" y="1480">
+</text>
+<text x="10" y="1500"><tspan style="fill:#00cd00;">			}</tspan>
+</text>
+<text x="10" y="1520"><tspan style="fill:#00cd00;">		})</tspan>
+</text>
+<text x="10" y="1540"><tspan style="fill:#00cd00;">	}</tspan>
+</text>
+<text x="10" y="1560">
+</text>
+<text x="10" y="1580"><tspan style="fill:#00cd00;">	var&#160;crossDistances&#160;=&#160;[]int{}</tspan>
+</text>
+<text x="10" y="1600"><tspan style="fill:#00cd00;">	for&#160;_,&#160;cp&#160;:=&#160;range&#160;crossPositions&#160;{</tspan>
+</text>
+<text x="10" y="1620"><tspan style="fill:#00cd00;">		crossDistances&#160;=&#160;append(crossDistances,&#160;cp.wire1+cp.wire2)</tspan>
+</text>
+<text x="10" y="1640"><tspan style="fill:#00cd00;">	}</tspan>
+</text>
+<text x="10" y="1660">
+</text>
+<text x="10" y="1680">	sort.Ints(crossDistances)
+</text>
+<text x="10" y="1700">
+</text>
+<text x="10" y="1720">	var&#160;shortest&#160;=&#160;crossDistances[0]
+</text>
+<text x="10" y="1740">
+</text>
+<text x="10" y="1760">	fmt.Println(&quot;Day&#160;03&#160;-&#160;Part&#160;<tspan style="fill:#cd0000;">1:&quot;,</tspan><tspan style="fill:#00cd00;">2:&quot;,</tspan>&#160;shortest)
+</text>
+<text x="10" y="1780">}
+</text>
+</g>
+</svg>
+<!-- SVG generated by ansifilter 2.15, http://www.andre-simon.de/ -->
