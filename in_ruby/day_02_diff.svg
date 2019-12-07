@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.2//EN" "http://www.w3.org/Graphics/SVG/1.2/DTD/svg12.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="full" xml:space="preserve" width="600" height="920">
+<desc>Source file</desc>
+<defs><style type="text/css">
+<![CDATA[
+rect { fill:#ffffff; } 
+g { font-size: 10pt; font-family: Courier New; white-space: pre; }
+]]>
+</style></defs><g>
+<rect x="0" y="0" width="100%" height="100%"/>
+<text x="10" y="20"></text>
+<text x="10" y="20"><tspan style="font-weight:bold;fill:#7f7f7f;">diff&#160;--git&#160;a/day_02_part_1.rb&#160;b/day_02_part_2.rb</tspan>
+</text>
+<text x="10" y="40"><tspan style="font-weight:bold;fill:#7f7f7f;">index&#160;d4417e8..9f2fa65&#160;100644</tspan>
+</text>
+<text x="10" y="60"><tspan style="font-weight:bold;fill:#7f7f7f;">---&#160;a/day_02_part_1.rb</tspan>
+</text>
+<text x="10" y="80"><tspan style="font-weight:bold;fill:#7f7f7f;">+++&#160;b/day_02_part_2.rb</tspan>
+</text>
+<text x="10" y="100"><tspan style="fill:#00cdcd;">@@&#160;-1,15&#160;+1,18&#160;@@</tspan>
+</text>
+<text x="10" y="120">input&#160;=&#160;File.read(&quot;../inputs/day02.txt&quot;).split(&quot;,&quot;).map(&amp;:to_i)
+</text>
+<text x="10" y="140">
+</text>
+<text x="10" y="160"><tspan style="fill:#00cd00;">TARGET=19690720</tspan>
+</text>
+<text x="10" y="180">
+</text>
+<text x="10" y="200">ADD=1
+</text>
+<text x="10" y="220">MULT=2
+</text>
+<text x="10" y="240">RETURN=99
+</text>
+<text x="10" y="260">
+</text>
+<text x="10" y="280">def&#160;<tspan style="fill:#cd0000;">execute!(prog)</tspan><tspan style="fill:#00cd00;">execute!(prog,limit)</tspan>
+</text>
+<text x="10" y="300">&#160;&#160;prog&#160;=&#160;prog.clone
+</text>
+<text x="10" y="320">&#160;&#160;pos&#160;=&#160;0
+</text>
+<text x="10" y="340">&#160;&#160;loop&#160;do
+</text>
+<text x="10" y="360">&#160;&#160;&#160;&#160;op_id,a_star,b_star,res_star&#160;=&#160;prog[pos&#160;..&#160;pos+3]
+</text>
+<text x="10" y="380">&#160;&#160;&#160;&#160;break&#160;if&#160;op_id&#160;==&#160;RETURN
+</text>
+<text x="10" y="400">&#160;&#160;&#160;&#160;<tspan style="fill:#00cd00;">break&#160;if&#160;prog[0]&#160;&gt;&#160;limit</tspan>
+</text>
+<text x="10" y="420">&#160;&#160;&#160;&#160;op&#160;=&#160;case&#160;op_id
+</text>
+<text x="10" y="440">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;when&#160;ADD&#160;&#160;then&#160;:+.to_proc
+</text>
+<text x="10" y="460">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;when&#160;MULT&#160;then&#160;:*.to_proc
+</text>
+<text x="10" y="480"><tspan style="fill:#00cdcd;">@@&#160;-20,8&#160;+23,20&#160;@@</tspan>&#160;def&#160;execute!(prog)
+</text>
+<text x="10" y="500">&#160;&#160;prog
+</text>
+<text x="10" y="520">end
+</text>
+<text x="10" y="540">
+</text>
+<text x="10" y="560"><tspan style="fill:#cd0000;">input[1]=12</tspan>
+</text>
+<text x="10" y="580"><tspan style="fill:#cd0000;">input[2]=2</tspan><tspan style="fill:#00cd00;">def&#160;find_noun_and_verb(input,&#160;target)</tspan>
+</text>
+<text x="10" y="600"><tspan style="fill:#00cd00;">&#160;&#160;99.times&#160;do&#160;|noun|</tspan>
+</text>
+<text x="10" y="620"><tspan style="fill:#00cd00;">&#160;&#160;&#160;&#160;99.times&#160;do&#160;|verb|</tspan>
+</text>
+<text x="10" y="640"><tspan style="fill:#00cd00;">&#160;&#160;&#160;&#160;&#160;&#160;prog&#160;=&#160;input.clone</tspan>
+</text>
+<text x="10" y="660"><tspan style="fill:#00cd00;">&#160;&#160;&#160;&#160;&#160;&#160;prog[1]&#160;=&#160;noun</tspan>
+</text>
+<text x="10" y="680"><tspan style="fill:#00cd00;">&#160;&#160;&#160;&#160;&#160;&#160;prog[2]&#160;=&#160;verb</tspan>
+</text>
+<text x="10" y="700">&#160;&#160;&#160;&#160;&#160;&#160;result&#160;=&#160;<tspan style="fill:#cd0000;">execute!(input)</tspan><tspan style="fill:#00cd00;">execute!(prog,&#160;target)</tspan>
+</text>
+<text x="10" y="720"><tspan style="fill:#00cd00;">&#160;&#160;&#160;&#160;&#160;&#160;if&#160;result[0]&#160;==&#160;target</tspan>
+</text>
+<text x="10" y="740"><tspan style="fill:#00cd00;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return&#160;[noun,&#160;verb]</tspan>
+</text>
+<text x="10" y="760"><tspan style="fill:#00cd00;">&#160;&#160;&#160;&#160;&#160;&#160;end</tspan>
+</text>
+<text x="10" y="780"><tspan style="fill:#00cd00;">&#160;&#160;&#160;&#160;end</tspan>
+</text>
+<text x="10" y="800"><tspan style="fill:#00cd00;">&#160;&#160;end</tspan>
+</text>
+<text x="10" y="820"><tspan style="fill:#00cd00;">end</tspan>
+</text>
+<text x="10" y="840">
+</text>
+<text x="10" y="860"><tspan style="fill:#00cd00;">noun,&#160;verb&#160;=&#160;find_noun_and_verb(input,&#160;TARGET)</tspan>
+</text>
+<text x="10" y="880">
+</text>
+<text x="10" y="900">puts&#160;&quot;Day&#160;02&#160;-&#160;Part&#160;<tspan style="fill:#cd0000;">1:&#160;#{result[0]}&quot;</tspan><tspan style="fill:#00cd00;">2:&#160;#{100*noun&#160;+&#160;verb}&quot;</tspan>
+</text>
+</g>
+</svg>
+<!-- SVG generated by ansifilter 2.15, http://www.andre-simon.de/ -->
