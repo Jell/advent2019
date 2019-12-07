@@ -13,6 +13,6 @@ README.md:
 	echo "# In Go\n" > README.md
 
 $(DIFFS): README.md
-	../diff.sh $@ $@_part_*
+	../diff.sh $@ $@_part_1/main.go $@_part_2/main.go
 
 all: $(MAIN_FILES) $(DIFFS)
