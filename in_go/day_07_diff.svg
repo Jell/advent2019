@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.2//EN" "http://www.w3.org/Graphics/SVG/1.2/DTD/svg12.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="full" xml:space="preserve" width="600" height="1640">
+<desc>Source file</desc>
+<defs><style type="text/css">
+<![CDATA[
+rect { fill:#ffffff; } 
+g { font-size: 10pt; font-family: Courier New; white-space: pre; }
+]]>
+</style></defs><g>
+<rect x="0" y="0" width="100%" height="100%"/>
+<text x="10" y="20"></text>
+<text x="10" y="20"><tspan style="font-weight:bold;fill:#7f7f7f;">diff&#160;--git&#160;a/day_07_part_1/main.go&#160;b/day_07_part_2/main.go</tspan>
+</text>
+<text x="10" y="40"><tspan style="font-weight:bold;fill:#7f7f7f;">index&#160;a78a5a3..76a63c8&#160;100644</tspan>
+</text>
+<text x="10" y="60"><tspan style="font-weight:bold;fill:#7f7f7f;">---&#160;a/day_07_part_1/main.go</tspan>
+</text>
+<text x="10" y="80"><tspan style="font-weight:bold;fill:#7f7f7f;">+++&#160;b/day_07_part_2/main.go</tspan>
+</text>
+<text x="10" y="100"><tspan style="fill:#00cdcd;">@@&#160;-58,11&#160;+58,10&#160;@@</tspan>&#160;func&#160;parseOp(in&#160;int)&#160;operation&#160;{
+</text>
+<text x="10" y="120">	}
+</text>
+<text x="10" y="140">}
+</text>
+<text x="10" y="160">
+</text>
+<text x="10" y="180">func&#160;<tspan style="fill:#cd0000;">run(tape</tspan><tspan style="fill:#00cd00;">run(idx&#160;int,&#160;tape</tspan>&#160;[]int,&#160;<tspan style="fill:#cd0000;">inputs&#160;[]int)&#160;(int,&#160;[]int)</tspan><tspan style="fill:#00cd00;">input&#160;chan&#160;int,&#160;output&#160;chan&#160;int)</tspan>&#160;{
+</text>
+<text x="10" y="200">	tape&#160;=&#160;append(tape[:0:0],&#160;tape...)
+</text>
+<text x="10" y="220">	var&#160;position&#160;=&#160;0
+</text>
+<text x="10" y="240">
+</text>
+<text x="10" y="260"><tspan style="fill:#cd0000;">	var&#160;output&#160;int</tspan>
+</text>
+<text x="10" y="280">	var&#160;op&#160;operation
+</text>
+<text x="10" y="300">	var&#160;args&#160;[]int
+</text>
+<text x="10" y="320">
+</text>
+<text x="10" y="340"><tspan style="fill:#00cdcd;">@@&#160;-86,10&#160;+85,9&#160;@@</tspan>&#160;Loop:
+</text>
+<text x="10" y="360">		case&#160;2:
+</text>
+<text x="10" y="380">			tape[args[2]]&#160;=&#160;args[0]&#160;*&#160;args[1]
+</text>
+<text x="10" y="400">		case&#160;3:
+</text>
+<text x="10" y="420">			tape[args[0]]&#160;=&#160;<tspan style="fill:#cd0000;">inputs[0]</tspan>
+</text>
+<text x="10" y="440"><tspan style="fill:#cd0000;">			inputs&#160;=&#160;inputs[1:]</tspan><tspan style="fill:#00cd00;">&lt;-input</tspan>
+</text>
+<text x="10" y="460">		case&#160;4:
+</text>
+<text x="10" y="480">			output&#160;<tspan style="fill:#cd0000;">=</tspan><tspan style="fill:#00cd00;">&lt;-</tspan>&#160;args[0]
+</text>
+<text x="10" y="500">		case&#160;5:
+</text>
+<text x="10" y="520">			if&#160;args[0]&#160;!=&#160;0&#160;{
+</text>
+<text x="10" y="540">				position&#160;=&#160;args[1]
+</text>
+<text x="10" y="560"><tspan style="fill:#00cdcd;">@@&#160;-113,14&#160;+111,13&#160;@@</tspan>&#160;Loop:
+</text>
+<text x="10" y="580">				tape[args[2]]&#160;=&#160;0
+</text>
+<text x="10" y="600">			}
+</text>
+<text x="10" y="620">		case&#160;99:
+</text>
+<text x="10" y="640">			<tspan style="fill:#00cd00;">close(output)</tspan>
+</text>
+<text x="10" y="660">			break&#160;Loop
+</text>
+<text x="10" y="680">		default:
+</text>
+<text x="10" y="700">			panic(&quot;oh&#160;noes!&quot;)
+</text>
+<text x="10" y="720">		}
+</text>
+<text x="10" y="740">		position&#160;+=&#160;(op.arity&#160;+&#160;1)
+</text>
+<text x="10" y="760">	}
+</text>
+<text x="10" y="780"><tspan style="fill:#cd0000;">	return&#160;output,&#160;tape</tspan>
+</text>
+<text x="10" y="800">
+</text>
+<text x="10" y="820">}
+</text>
+<text x="10" y="840">
+</text>
+<text x="10" y="860">func&#160;main()&#160;{
+</text>
+<text x="10" y="880"><tspan style="fill:#00cdcd;">@@&#160;-128,20&#160;+125,36&#160;@@</tspan>&#160;func&#160;main()&#160;{
+</text>
+<text x="10" y="900">	prog&#160;=&#160;strings.TrimSuffix(prog,&#160;&quot;\n&quot;)
+</text>
+<text x="10" y="920">	var&#160;tape&#160;=&#160;utils.StrsToInts(strings.Split(prog,&#160;&quot;,&quot;))
+</text>
+<text x="10" y="940">
+</text>
+<text x="10" y="960"><tspan style="fill:#cd0000;">	var&#160;signal&#160;int</tspan>
+</text>
+<text x="10" y="980">	var&#160;maxSignal&#160;=&#160;0
+</text>
+<text x="10" y="1000">
+</text>
+<text x="10" y="1020">	phaseSettings&#160;:=&#160;<tspan style="fill:#cd0000;">[]int{0,&#160;1,&#160;2,&#160;3,&#160;4}</tspan><tspan style="fill:#00cd00;">[]int{5,&#160;6,&#160;7,&#160;8,&#160;9}</tspan>
+</text>
+<text x="10" y="1040">	p&#160;:=&#160;prmt.New(prmt.IntSlice(phaseSettings))
+</text>
+<text x="10" y="1060">	for&#160;p.Next()&#160;{
+</text>
+<text x="10" y="1080">		<tspan style="fill:#cd0000;">signal</tspan><tspan style="fill:#00cd00;">var&#160;input</tspan>&#160;=&#160;<tspan style="fill:#cd0000;">0</tspan><tspan style="fill:#00cd00;">make(chan&#160;int)</tspan>
+</text>
+<text x="10" y="1100"><tspan style="fill:#00cd00;">		var&#160;firstInput&#160;=&#160;input</tspan>
+</text>
+<text x="10" y="1120"><tspan style="fill:#00cd00;">		var&#160;lastOutput&#160;chan&#160;int</tspan>
+</text>
+<text x="10" y="1140"><tspan style="fill:#00cd00;">		var&#160;output&#160;=&#160;make(chan&#160;int)</tspan>
+</text>
+<text x="10" y="1160">		for&#160;<tspan style="fill:#cd0000;">_,</tspan><tspan style="fill:#00cd00;">i,</tspan>&#160;phaseSetting&#160;:=&#160;range&#160;phaseSettings&#160;{
+</text>
+<text x="10" y="1180">			<tspan style="fill:#cd0000;">signal,&#160;_</tspan><tspan style="fill:#00cd00;">go&#160;run(i,&#160;tape,&#160;input,&#160;output)</tspan>
+</text>
+<text x="10" y="1200"><tspan style="fill:#00cd00;">			input&#160;&lt;-&#160;phaseSetting</tspan>
+</text>
+<text x="10" y="1220"><tspan style="fill:#00cd00;">			input&#160;=&#160;output</tspan>
+</text>
+<text x="10" y="1240"><tspan style="fill:#00cd00;">			lastOutput&#160;=&#160;output</tspan>
+</text>
+<text x="10" y="1260"><tspan style="fill:#00cd00;">			output</tspan>&#160;=&#160;<tspan style="fill:#cd0000;">run(tape,&#160;[]int{phaseSetting,&#160;signal})</tspan><tspan style="fill:#00cd00;">make(chan&#160;int)</tspan>
+</text>
+<text x="10" y="1280">		}
+</text>
+<text x="10" y="1300">		<tspan style="fill:#00cd00;">firstInput&#160;&lt;-&#160;0</tspan>
+</text>
+<text x="10" y="1320"><tspan style="fill:#00cd00;">		for&#160;{</tspan>
+</text>
+<text x="10" y="1340"><tspan style="fill:#00cd00;">			signal,&#160;more&#160;:=&#160;&lt;-lastOutput</tspan>
+</text>
+<text x="10" y="1360"><tspan style="fill:#00cd00;">			if&#160;!more&#160;{</tspan>
+</text>
+<text x="10" y="1380"><tspan style="fill:#00cd00;">				break</tspan>
+</text>
+<text x="10" y="1400"><tspan style="fill:#00cd00;">			}</tspan>
+</text>
+<text x="10" y="1420">			if&#160;signal&#160;&gt;&#160;maxSignal&#160;{
+</text>
+<text x="10" y="1440">				maxSignal&#160;=&#160;signal
+</text>
+<text x="10" y="1460">			<tspan style="fill:#00cd00;">}</tspan>
+</text>
+<text x="10" y="1480"><tspan style="fill:#00cd00;">			go&#160;func()&#160;{</tspan>
+</text>
+<text x="10" y="1500"><tspan style="fill:#00cd00;">				firstInput&#160;&lt;-&#160;signal</tspan>
+</text>
+<text x="10" y="1520"><tspan style="fill:#00cd00;">			}()</tspan>
+</text>
+<text x="10" y="1540">		}
+</text>
+<text x="10" y="1560">	}
+</text>
+<text x="10" y="1580">
+</text>
+<text x="10" y="1600">	fmt.Println(&quot;Day&#160;07&#160;-&#160;Part&#160;<tspan style="fill:#cd0000;">1:&quot;,</tspan><tspan style="fill:#00cd00;">2:&quot;,</tspan>&#160;maxSignal)
+</text>
+<text x="10" y="1620">}
+</text>
+</g>
+</svg>
+<!-- SVG generated by ansifilter 2.15, http://www.andre-simon.de/ -->
