@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.2//EN" "http://www.w3.org/Graphics/SVG/1.2/DTD/svg12.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="full" xml:space="preserve" width="600" height="1560">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="full" xml:space="preserve" width="600" height="1380">
 <desc>Source file</desc>
 <defs><style type="text/css">
 <![CDATA[
@@ -12,157 +12,139 @@ g { font-size: 10pt; font-family: Courier New; white-space: pre; }
 <text x="10" y="20"></text>
 <text x="10" y="20"><tspan style="font-weight:bold;fill:#7f7f7f;">diff&#160;--git&#160;a/day_05_part_1/main.go&#160;b/day_05_part_2/main.go</tspan>
 </text>
-<text x="10" y="40"><tspan style="font-weight:bold;fill:#7f7f7f;">index&#160;551c3ba..e188a3e&#160;100644</tspan>
+<text x="10" y="40"><tspan style="font-weight:bold;fill:#7f7f7f;">index&#160;551c3ba..c999d85&#160;100644</tspan>
 </text>
 <text x="10" y="60"><tspan style="font-weight:bold;fill:#7f7f7f;">---&#160;a/day_05_part_1/main.go</tspan>
 </text>
 <text x="10" y="80"><tspan style="font-weight:bold;fill:#7f7f7f;">+++&#160;b/day_05_part_2/main.go</tspan>
 </text>
-<text x="10" y="100"><tspan style="fill:#00cdcd;">@@&#160;-21,12&#160;+21,14&#160;@@</tspan>&#160;func&#160;parseOp(in&#160;int)&#160;operation&#160;{
+<text x="10" y="100"><tspan style="fill:#00cdcd;">@@&#160;-26,7&#160;+26,7&#160;@@</tspan>&#160;func&#160;parseOp(in&#160;int)&#160;operation&#160;{
 </text>
-<text x="10" y="120">	in&#160;-=&#160;immediate1
+<text x="10" y="120">	case&#160;99:
 </text>
-<text x="10" y="140">	var&#160;immediate2&#160;=&#160;in&#160;%&#160;10000
+<text x="10" y="140">		arity&#160;=&#160;0
 </text>
-<text x="10" y="160">	in&#160;-=&#160;immediate2
+<text x="10" y="160">		immediates&#160;=&#160;[]bool{}
 </text>
-<text x="10" y="180">	<tspan style="fill:#00cd00;">var&#160;immediate3&#160;=&#160;in&#160;%&#160;100000</tspan>
+<text x="10" y="180">	case&#160;1,&#160;<tspan style="fill:#cd0000;">2:</tspan><tspan style="fill:#00cd00;">2,&#160;7,&#160;8:</tspan>
 </text>
-<text x="10" y="200"><tspan style="fill:#00cd00;">	in&#160;-=&#160;immediate3</tspan>
+<text x="10" y="200">		arity&#160;=&#160;3
 </text>
-<text x="10" y="220">
+<text x="10" y="220">		immediates&#160;=&#160;[]bool{
 </text>
-<text x="10" y="240">	switch&#160;op&#160;{
+<text x="10" y="240">			immediate1&#160;&gt;&#160;0,
 </text>
-<text x="10" y="260">	case&#160;99:
+<text x="10" y="260"><tspan style="fill:#00cdcd;">@@&#160;-43,6&#160;+43,12&#160;@@</tspan>&#160;func&#160;parseOp(in&#160;int)&#160;operation&#160;{
 </text>
-<text x="10" y="280">		arity&#160;=&#160;0
+<text x="10" y="280">		immediates&#160;=&#160;[]bool{
 </text>
-<text x="10" y="300">		immediates&#160;=&#160;[]bool{}
+<text x="10" y="300">			immediate1&#160;&gt;&#160;0,
 </text>
-<text x="10" y="320">	case&#160;1,&#160;<tspan style="fill:#cd0000;">2:</tspan><tspan style="fill:#00cd00;">2,&#160;7,&#160;8:</tspan>
+<text x="10" y="320">		}
 </text>
-<text x="10" y="340">		arity&#160;=&#160;3
+<text x="10" y="340">	<tspan style="fill:#00cd00;">case&#160;5,&#160;6:</tspan>
 </text>
-<text x="10" y="360">		immediates&#160;=&#160;[]bool{
+<text x="10" y="360"><tspan style="fill:#00cd00;">		arity&#160;=&#160;2</tspan>
 </text>
-<text x="10" y="380">			immediate1&#160;&gt;&#160;0,
+<text x="10" y="380"><tspan style="fill:#00cd00;">		immediates&#160;=&#160;[]bool{</tspan>
 </text>
-<text x="10" y="400"><tspan style="fill:#00cdcd;">@@&#160;-43,6&#160;+45,12&#160;@@</tspan>&#160;func&#160;parseOp(in&#160;int)&#160;operation&#160;{
+<text x="10" y="400"><tspan style="fill:#00cd00;">			immediate1&#160;&gt;&#160;0,</tspan>
 </text>
-<text x="10" y="420">		immediates&#160;=&#160;[]bool{
+<text x="10" y="420"><tspan style="fill:#00cd00;">			immediate2&#160;&gt;&#160;0,</tspan>
 </text>
-<text x="10" y="440">			immediate1&#160;&gt;&#160;0,
+<text x="10" y="440"><tspan style="fill:#00cd00;">		}</tspan>
 </text>
-<text x="10" y="460">		}
+<text x="10" y="460">	}
 </text>
-<text x="10" y="480">	<tspan style="fill:#00cd00;">case&#160;5,&#160;6:</tspan>
+<text x="10" y="480">	return&#160;operation{
 </text>
-<text x="10" y="500"><tspan style="fill:#00cd00;">		arity&#160;=&#160;2</tspan>
+<text x="10" y="500">		code:&#160;&#160;&#160;&#160;&#160;&#160;op,
 </text>
-<text x="10" y="520"><tspan style="fill:#00cd00;">		immediates&#160;=&#160;[]bool{</tspan>
+<text x="10" y="520"><tspan style="fill:#00cdcd;">@@&#160;-58,7&#160;+64,7&#160;@@</tspan>&#160;func&#160;main()&#160;{
 </text>
-<text x="10" y="540"><tspan style="fill:#00cd00;">			immediate1&#160;&gt;&#160;0,</tspan>
+<text x="10" y="540">
 </text>
-<text x="10" y="560"><tspan style="fill:#00cd00;">			immediate2&#160;&gt;&#160;0,</tspan>
+<text x="10" y="560">	var&#160;position&#160;=&#160;0
 </text>
-<text x="10" y="580"><tspan style="fill:#00cd00;">		}</tspan>
+<text x="10" y="580">
 </text>
-<text x="10" y="600">	}
+<text x="10" y="600">	var&#160;input&#160;=&#160;<tspan style="fill:#cd0000;">1</tspan><tspan style="fill:#00cd00;">5</tspan>
 </text>
-<text x="10" y="620">	return&#160;operation{
+<text x="10" y="620">	var&#160;outputs&#160;=&#160;[]int{}
 </text>
-<text x="10" y="640">		code:&#160;&#160;&#160;&#160;&#160;&#160;op,
+<text x="10" y="640">	var&#160;op&#160;operation
 </text>
-<text x="10" y="660"><tspan style="fill:#00cdcd;">@@&#160;-58,7&#160;+66,7&#160;@@</tspan>&#160;func&#160;main()&#160;{
+<text x="10" y="660">	var&#160;args&#160;[]int
 </text>
-<text x="10" y="680">
+<text x="10" y="680"><tspan style="fill:#00cdcd;">@@&#160;-86,6&#160;+92,28&#160;@@</tspan>&#160;Loop:
 </text>
-<text x="10" y="700">	var&#160;position&#160;=&#160;0
+<text x="10" y="700">			tape[args[0]]&#160;=&#160;input
 </text>
-<text x="10" y="720">
+<text x="10" y="720">		case&#160;4:
 </text>
-<text x="10" y="740">	var&#160;input&#160;=&#160;<tspan style="fill:#cd0000;">1</tspan><tspan style="fill:#00cd00;">5</tspan>
+<text x="10" y="740">			outputs&#160;=&#160;append(outputs,&#160;args[0])
 </text>
-<text x="10" y="760">	var&#160;outputs&#160;=&#160;[]int{}
+<text x="10" y="760">		<tspan style="fill:#00cd00;">case&#160;5:</tspan>
 </text>
-<text x="10" y="780">	var&#160;op&#160;operation
+<text x="10" y="780"><tspan style="fill:#00cd00;">			if&#160;args[0]&#160;!=&#160;0&#160;{</tspan>
 </text>
-<text x="10" y="800">	var&#160;args&#160;[]int
+<text x="10" y="800"><tspan style="fill:#00cd00;">				position&#160;=&#160;args[1]</tspan>
 </text>
-<text x="10" y="820"><tspan style="fill:#00cdcd;">@@&#160;-86,13&#160;+94,36&#160;@@</tspan>&#160;Loop:
+<text x="10" y="820"><tspan style="fill:#00cd00;">				continue</tspan>
 </text>
-<text x="10" y="840">			tape[args[0]]&#160;=&#160;input
+<text x="10" y="840"><tspan style="fill:#00cd00;">			}</tspan>
 </text>
-<text x="10" y="860">		case&#160;4:
+<text x="10" y="860"><tspan style="fill:#00cd00;">		case&#160;6:</tspan>
 </text>
-<text x="10" y="880">			outputs&#160;=&#160;append(outputs,&#160;args[0])
+<text x="10" y="880"><tspan style="fill:#00cd00;">			if&#160;args[0]&#160;==&#160;0&#160;{</tspan>
 </text>
-<text x="10" y="900">		<tspan style="fill:#00cd00;">case&#160;5:</tspan>
+<text x="10" y="900"><tspan style="fill:#00cd00;">				position&#160;=&#160;args[1]</tspan>
 </text>
-<text x="10" y="920"><tspan style="fill:#00cd00;">			if&#160;args[0]&#160;!=&#160;0&#160;{</tspan>
+<text x="10" y="920"><tspan style="fill:#00cd00;">				continue</tspan>
 </text>
-<text x="10" y="940"><tspan style="fill:#00cd00;">				position&#160;=&#160;args[1]</tspan>
+<text x="10" y="940"><tspan style="fill:#00cd00;">			}</tspan>
 </text>
-<text x="10" y="960"><tspan style="fill:#00cd00;">				goto&#160;End</tspan>
+<text x="10" y="960"><tspan style="fill:#00cd00;">		case&#160;7:</tspan>
 </text>
-<text x="10" y="980"><tspan style="fill:#00cd00;">			}</tspan>
+<text x="10" y="980"><tspan style="fill:#00cd00;">			if&#160;args[0]&#160;&lt;&#160;args[1]&#160;{</tspan>
 </text>
-<text x="10" y="1000"><tspan style="fill:#00cd00;">		case&#160;6:</tspan>
+<text x="10" y="1000"><tspan style="fill:#00cd00;">				tape[args[2]]&#160;=&#160;1</tspan>
 </text>
-<text x="10" y="1020"><tspan style="fill:#00cd00;">			if&#160;args[0]&#160;==&#160;0&#160;{</tspan>
+<text x="10" y="1020"><tspan style="fill:#00cd00;">			}&#160;else&#160;{</tspan>
 </text>
-<text x="10" y="1040"><tspan style="fill:#00cd00;">				position&#160;=&#160;args[1]</tspan>
+<text x="10" y="1040"><tspan style="fill:#00cd00;">				tape[args[2]]&#160;=&#160;0</tspan>
 </text>
-<text x="10" y="1060"><tspan style="fill:#00cd00;">				goto&#160;End</tspan>
+<text x="10" y="1060"><tspan style="fill:#00cd00;">			}</tspan>
 </text>
-<text x="10" y="1080"><tspan style="fill:#00cd00;">			}</tspan>
+<text x="10" y="1080"><tspan style="fill:#00cd00;">		case&#160;8:</tspan>
 </text>
-<text x="10" y="1100"><tspan style="fill:#00cd00;">		case&#160;7:</tspan>
+<text x="10" y="1100"><tspan style="fill:#00cd00;">			if&#160;args[0]&#160;==&#160;args[1]&#160;{</tspan>
 </text>
-<text x="10" y="1120"><tspan style="fill:#00cd00;">			if&#160;args[0]&#160;&lt;&#160;args[1]&#160;{</tspan>
+<text x="10" y="1120"><tspan style="fill:#00cd00;">				tape[args[2]]&#160;=&#160;1</tspan>
 </text>
-<text x="10" y="1140"><tspan style="fill:#00cd00;">				tape[args[2]]&#160;=&#160;1</tspan>
+<text x="10" y="1140"><tspan style="fill:#00cd00;">			}&#160;else&#160;{</tspan>
 </text>
-<text x="10" y="1160"><tspan style="fill:#00cd00;">			}&#160;else&#160;{</tspan>
+<text x="10" y="1160"><tspan style="fill:#00cd00;">				tape[args[2]]&#160;=&#160;0</tspan>
 </text>
-<text x="10" y="1180"><tspan style="fill:#00cd00;">				tape[args[2]]&#160;=&#160;0</tspan>
+<text x="10" y="1180"><tspan style="fill:#00cd00;">			}</tspan>
 </text>
-<text x="10" y="1200"><tspan style="fill:#00cd00;">			}</tspan>
+<text x="10" y="1200">		case&#160;99:
 </text>
-<text x="10" y="1220"><tspan style="fill:#00cd00;">		case&#160;8:</tspan>
+<text x="10" y="1220">			break&#160;Loop
 </text>
-<text x="10" y="1240"><tspan style="fill:#00cd00;">			if&#160;args[0]&#160;==&#160;args[1]&#160;{</tspan>
+<text x="10" y="1240">		default:
 </text>
-<text x="10" y="1260"><tspan style="fill:#00cd00;">				tape[args[2]]&#160;=&#160;1</tspan>
+<text x="10" y="1260"><tspan style="fill:#00cdcd;">@@&#160;-94,5&#160;+122,5&#160;@@</tspan>&#160;Loop:
 </text>
-<text x="10" y="1280"><tspan style="fill:#00cd00;">			}&#160;else&#160;{</tspan>
+<text x="10" y="1280">		position&#160;+=&#160;(op.arity&#160;+&#160;1)
 </text>
-<text x="10" y="1300"><tspan style="fill:#00cd00;">				tape[args[2]]&#160;=&#160;0</tspan>
+<text x="10" y="1300">	}
 </text>
-<text x="10" y="1320"><tspan style="fill:#00cd00;">			}</tspan>
+<text x="10" y="1320">
 </text>
-<text x="10" y="1340">		case&#160;99:
+<text x="10" y="1340">	fmt.Println(&quot;Day&#160;05&#160;-&#160;Part&#160;<tspan style="fill:#cd0000;">1:&quot;,</tspan><tspan style="fill:#00cd00;">2:&quot;,</tspan>&#160;outputs[len(outputs)-1])
 </text>
-<text x="10" y="1360">			break&#160;Loop
-</text>
-<text x="10" y="1380">		default:
-</text>
-<text x="10" y="1400">			panic(&quot;oh&#160;noes!&quot;)
-</text>
-<text x="10" y="1420">		}
-</text>
-<text x="10" y="1440">		position&#160;+=&#160;(op.arity&#160;+&#160;1)
-</text>
-<text x="10" y="1460">	<tspan style="fill:#00cd00;">End:</tspan>
-</text>
-<text x="10" y="1480">	}
-</text>
-<text x="10" y="1500">
-</text>
-<text x="10" y="1520">	fmt.Println(&quot;Day&#160;05&#160;-&#160;Part&#160;<tspan style="fill:#cd0000;">1:&quot;,</tspan><tspan style="fill:#00cd00;">2:&quot;,</tspan>&#160;outputs[len(outputs)-1])
-</text>
-<text x="10" y="1540">}
+<text x="10" y="1360">}
 </text>
 </g>
 </svg>

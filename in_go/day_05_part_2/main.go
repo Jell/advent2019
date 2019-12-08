@@ -21,8 +21,6 @@ func parseOp(in int) operation {
 	in -= immediate1
 	var immediate2 = in % 10000
 	in -= immediate2
-	var immediate3 = in % 100000
-	in -= immediate3
 
 	switch op {
 	case 99:
@@ -97,12 +95,12 @@ Loop:
 		case 5:
 			if args[0] != 0 {
 				position = args[1]
-				goto End
+				continue
 			}
 		case 6:
 			if args[0] == 0 {
 				position = args[1]
-				goto End
+				continue
 			}
 		case 7:
 			if args[0] < args[1] {
@@ -122,7 +120,6 @@ Loop:
 			panic("oh noes!")
 		}
 		position += (op.arity + 1)
-	End:
 	}
 
 	fmt.Println("Day 05 - Part 2:", outputs[len(outputs)-1])
